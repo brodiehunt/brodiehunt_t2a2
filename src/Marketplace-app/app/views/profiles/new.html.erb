@@ -1,0 +1,12 @@
+<%= render "shared/top_nav_marketplace"%>
+<div class="container mt-3">
+  <div class="row justify-content-center mt-3">
+    <div class="col-6 justify-content-center mt-5 border">
+      <h2 class="text-center mt-3">New Profile</h2>
+
+      <%= render 'form', profile: @profile %>
+
+      <%= link_to 'Back', profiles_path %>
+    </div>
+  </div>
+</div>

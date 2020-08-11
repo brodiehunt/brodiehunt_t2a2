@@ -1,0 +1,178 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+
+
+.footer-lists {
+  list-style-type: none;
+  color: white;
+}
+
+
+
+a {
+  color: pink;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: pink;
+}
+
+.model-content {
+  min-height: 75vh;
+}
+
+.main-container {
+  min-height: 100vh;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+h1,
+h2,
+h6,
+h4 {
+  color: pink;
+}
+
+
+.website-header-logo {
+  font-size: 20px;
+}
+
+
+
+/* box that contains hamburger */
+.hamburger {
+  position: relative;
+  width: 20%;
+  
+  align-items: center;
+  max-width: 40px;
+  display: flex;
+  // flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu_hamburger {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  background-color: blue;
+  
+
+}
+
+.menu_profile{
+  visibility: hidden;
+  position: absolute;
+  background-color: blue;
+}
+
+label {
+  cursor: pointer;
+}
+
+#toggle_hamburger {
+  position: absolute;
+  left: -9999px;
+}
+
+#toggle_profile {
+  position: absolute;
+  left: -9999px;
+}
+
+#toggle_hamburger:checked ~ .menu_hamburger {
+  visibility: visible;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  max-width: 375px;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(40, 40, 40, 0.3);
+}
+
+.dropdown-toggle::after { 
+  content: none; 
+} 
+
+#toggle_hamburger:checked ~ label {
+  z-index: 3;
+}
+
+#toggle_profile:checked ~ .menu_profile {
+  visibility: visible;
+  position: absolute;
+  z-index: 3;
+  background-color: rgba(40, 40, 40, 0.3);
+
+}
+
+.search_products {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  top: 100px;
+}
+
+.search_products .container {
+  height: 40px;
+}
+.profile_links {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  top: 100px;
+}
+
+.profile_links .container {
+  height: 40px;
+}
+
+.menu_profile {
+  // height: 100px;
+  width: 200px;
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  background-color: rgba(40, 40, 40, 0.3);
+  
+}
+
+@media only screen and (max-width: 600px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h6 {
+    font-size: 2vh;
+  }
+}

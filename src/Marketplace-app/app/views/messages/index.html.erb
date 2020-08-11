@@ -1,0 +1,42 @@
+<%= render "shared/top_nav_marketplace"%>
+<%# main container after top nav bar %>
+<div class="container border">
+  <%# One row will exist with 2 columns to hold all content %>
+  <div class="row" style="min-height: 50vh;">
+    <%# This row will hold navigation for messages profile and manage ads %>
+    <div class="col-12 col-sm-3 border mt-3">
+      <ul class="nav flex-sm-column mt-3 justify-content-center justify-content-sm-start">
+        <li class="nav-item">
+          <a class="nav-link active" href="<%= profile_path(current_user.id) %>">Profile Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= listings_dashboard_path %> ">Manage Listings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= conversations_path %>">Messages</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 col-sm-8 ml-sm-3 border mt-3">
+      <%# This container will have the profile information %>
+      <div class="container-fluid border mt-3">
+        <% @messages.each do |message| %>
+          <div class="card my-3">
+            <% if message.user_id == current_user.id %>
+              <h6 class="text-right"><%= @sender.first_name %></h6>
+              <p class="text-right"><%= message.body %> </p>
+            <% else %>
+              <h6><%= @recipient.first_name %></h6>
+              <p><%= message.body %> </p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <%= form_for [@conversation, @message] do |f| %>
+        <%= f.text_area :body, class: "textarea", placeholder: "Message user" %>
+        <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+        <%= f.submit "Send Message", class: "button btn-secondary"%>
+      <% end %>
+    </div>
+  </div>
+</div>

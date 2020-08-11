@@ -1,0 +1,35 @@
+<%= render "shared/top_nav_online" %>
+<div class="container border">
+  <% if @cart.empty? %>
+    <div class="container border my-3" style="min-height: 15vh;">
+      <div class="bg-light">
+        <div class="container-fluid d-flex justify-content-center mt-4">
+          <h6 class="mt-3">You have no products in your cart</h6>
+       </div>
+        <div class="container-fluid d-flex justify-content-center">
+          <%= link_to "Back to Products", search_products_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <% @cart.each do |item| %>
+      <div class="container border my-3 d-flex" style="min-height: 15vh;">
+        <div class="col" style="max-height: 15vh;">
+          <%= image_tag (item.picture if item.picture.attached?) %>
+        </div>
+        <div class="col">
+          Brand: <%= item.brand_id %>
+          <br>
+          Size: <%= item.size_id %>
+        </div>
+        <div class="col">
+          Price: $<%= item.price %>
+        </div>
+        <div class="col">
+          <button class="btn btn-secondary"><%= link_to "Remove Item", remove_from_cart_path(item.id), method: :delete %></button>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>

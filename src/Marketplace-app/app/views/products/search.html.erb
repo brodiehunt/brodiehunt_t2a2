@@ -1,0 +1,38 @@
+<%= render "shared/top_nav_online"%>
+<div class="container">
+<%# One row will exist with 2 columns to hold all content %>
+  <div class="row" style="min-height: 50vh;">
+  <%# This row will hold navigation for messages profile and manage ads %>
+    <div class="col-12 col-lg-3 border mt-3">
+      <div class="flex-lg-column mt-3 justify-content-center justify-content-lg-start"> 
+        <%= bootstrap_form_with(url: search_products_path, local: true, :method => "get") do |form| %>
+          <%= form.select :brand_id, @brands.map {|s| [s.title, s.id ]} %>
+          <%= form.select :style_id, @styles.map {|s| [s.title, s.id ]} %>
+          <%= form.select :size_id, @sizes.map {|s| [s.title, s.id ]} %>
+          <%= form.submit("Search", :name => nil) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-lg-8 border ml-sm-3 mt-3">
+      <div class="container-fluid border mt-3 d-flex flex-wrap justify-content-center">
+        <% if @products != nil %>
+          <% @products.each do |product| %>
+            <div class="card col-10 col-sm-5 col-lg-4 my-3">
+              <%= image_tag (product.picture if product.picture.attached?), :class => "img-fluid card-img-top", :style => "max-height: 150px;" %>
+              <div class="card-body">
+                <h5 class="card-title"><%= product.title %></h5>
+                <p class="card-text"><%= product.description %></p>
+                <button class="btn btn-primary">
+                  <a href="<%= product_path(product.id) %>">Go to Product</a>
+                </button>
+              </div>
+            </div>
+          <% end %>  
+          <% else %>
+            <p> No products match your search </p>
+          <% end %>
+      </div> 
+    </div>
+  </div>
+</div>
+

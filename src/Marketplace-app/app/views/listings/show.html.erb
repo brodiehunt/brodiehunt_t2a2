@@ -1,0 +1,57 @@
+<%= render "shared/top_nav_marketplace"%>
+<div class="container">
+  <div class="row my-5 justify-content-center border">
+    <div class="col-10 col-md-8 border">
+      <div class="row d-flex justify-content-center">
+        <div class="col-10 col-md-5" style="max-height: 50vh;">
+          <%= image_tag @listing.picture if @listing.picture.attached? %> 
+        </div>
+      </div>
+    </div>
+    <div class="col-10 col-md-4 border">
+      <div class="row d-flex justify-content-center mt-5">
+        <h4><%= @listing.title %></h4>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <h6><%= @brands.find(@listing.brand_id).title %></h6>
+      </div>
+      <div class="row d-flex my-3">
+        <div class="col d-flex justify-content-end">
+          <p><strong>Size:</strong><%= @sizes.find(@listing.size_id).title %></p>
+        </div>
+        <div class="col d-flex justify-content-start price">
+          <p><strong>Price:</strong><%= @listing.price %></p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="container col-10 d-flex justify-content-center bg-light">
+          <p class="text-left"><%= @listing.description %></p>
+        </div>
+      </div>
+      <div class="row d-flex my-3">
+        <div class="col d-flex justify-content-end">
+          <p><strong>State:</strong><%= @states.find(@listing.state_id).title %></p>
+        </div>
+        <div class="col d-flex justify-content-start">
+          <p><strong>Postcode:</strong><%= @postcodes.find(@listing.postcode_id).title %></p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center my-3">
+        <% if user_signed_in? %>
+          <% if current_user.id == @listing.user_id %>
+            <%= link_to "Edit listing", edit_listing_path(@listing), class:"btn btn-secondary" %>
+          <% else %>
+            <%= link_to "Message User", conversations_path(sender_id: current_user.id, recipient_id: @listing.user_id), method: 'post', class:"btn btn-secondary" %>
+          <% end%> 
+        <% end %>
+        <p>Log in or Register to message user</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

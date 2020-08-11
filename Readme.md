@@ -2,7 +2,7 @@
 
 link to app: https://radiant-fjord-27151.herokuapp.com/
 
-Link to gitbub: 
+Link to github: 
 
 #### Problem Solved by this marketplace app
 
@@ -47,7 +47,7 @@ This application is built using the following:
 
 ###### Sitemap
 
-![Sitemap](src/Sitemap.png)
+![Sitemap](docs/Sitemap.png)
 
 ###### Screenshots
 
@@ -65,73 +65,73 @@ do later
 
 Home page:
 
-<img src="src/home_page.png" style="zoom:50%;" />
+<img src="docs/home_page.png" style="zoom:50%;" />
 
-<img src="src/tablet_home_page.png" style="zoom:50%;" />
+<img src="docs/tablet_home_page.png" style="zoom:50%;" />
 
-<img src="src/mobile_home_page.png" style="zoom:50%;" />
+<img src="docs/mobile_home_page.png" style="zoom:50%;" />
 
 Product/listings search:
 
-<img src="src/search_products_page.png" style="zoom:50%;" />
+<img src="docs/search_products_page.png" style="zoom:50%;" />
 
-<img src="src/tablet_product_listings_search.png" style="zoom:50%;" />
+<img src="docs/tablet_product_listings_search.png" style="zoom:50%;" />
 
-<img src="src/mobile_product_search.png" style="zoom:50%;" />
+<img src="docs/mobile_product_search.png" style="zoom:50%;" />
 
-<img src="src/mobile_listing_search.png" style="zoom:50%;" />
+<img src="docs/mobile_listing_search.png" style="zoom:50%;" />
 
 Indivdual product/listing page:
 
-<img src="src/individual_listing.png" style="zoom:50%;" />
+<img src="docs/individual_listing.png" style="zoom:50%;" />
 
-<img src="src/show_product.png" style="zoom:50%;" />
+<img src="docs/show_product.png" style="zoom:50%;" />
 
-<img src="src/mobile_individual_product_listing.png" style="zoom:50%;" />
+<img src="docs/mobile_individual_product_listing.png" style="zoom:50%;" />
 
 Cart page: 
 
-<img src="src/cart_page.png" style="zoom:50%;" />
+<img src="docs/cart_page.png" style="zoom:50%;" />
 
-<img src="src/mobile_cart_page.png" style="zoom:50%;" />
+<img src="docs/mobile_cart_page.png" style="zoom:50%;" />
 
 Profile page:
 
-<img src="src/profile_page.png" style="zoom:50%;" />
+<img src="docs/profile_page.png" style="zoom:50%;" />
 
-<img src="src/tablet_profile_page.png" style="zoom:50%;" />
+<img src="docs/tablet_profile_page.png" style="zoom:50%;" />
 
-<img src="src/mobile_profile_page.png" style="zoom:50%;" />
+<img src="docs/mobile_profile_page.png" style="zoom:50%;" />
 
 Conversation page:
 
-<img src="src/tablet_conversation_dasboard.png" style="zoom:50%;" />
+<img src="docs/tablet_conversation_dasboard.png" style="zoom:50%;" />
 
 Manage listings:
 
-<img src="src/tablet_manage_listing_page.png" style="zoom:50%;" />
+<img src="docs/tablet_manage_listing_page.png" style="zoom:50%;" />
 
 Pages that keep the same layout over all sizes:
 
-<img src="src/contact_us_page.png" style="zoom:50%;" />
+<img src="docs/contact_us_page.png" style="zoom:50%;" />
 
-<img src="src/create_listing.png" style="zoom:50%;" />
+<img src="docs/create_listing.png" style="zoom:50%;" />
 
-<img src="src/edit_listing.png" style="zoom:50%;" />
+<img src="docs/edit_listing.png" style="zoom:50%;" />
 
-<img src="src/log_in_page.png" style="zoom:50%;" />
+<img src="docs/log_in_page.png" style="zoom:50%;" />
 
-<img src="src/register_page.png" style="zoom:50%;" />
+<img src="docs/register_page.png" style="zoom:50%;" />
 
-<img src="src/hamburger_dropdown.png" style="zoom:50%;" />
+<img src="docs/hamburger_dropdown.png" style="zoom:50%;" />
 
-<img src="src/profile_toggle_dropdown.png" style="zoom:50%;" />
+<img src="docs/profile_toggle_dropdown.png" style="zoom:50%;" />
 
 
 
 #### ERD
 
-![](src/ERD.png)
+![](docs/ERD.png)
 
 #### High level components of application
 
@@ -181,11 +181,11 @@ User model has a has one relationship with the Profile model, a has many relatio
 
 #### Database schema design
 
-<img src="src/schema1.png" style="zoom:50%;" />
+<img src="docs/schema1.png" style="zoom:50%;" />
 
-<img src="src/schema2.png" style="zoom:50%;" />
+<img src="docs/schema2.png" style="zoom:50%;" />
 
-<img src="src/schema3.png" style="zoom:50%;" />
+<img src="docs/schema3.png" style="zoom:50%;" />
 
 #### Describe the way tasks are allocated and tracked in the project
 
@@ -201,9 +201,9 @@ The final card was for bugs and features that needed fixing. This was used to se
 
 This process was a continuos loop of organising and allocating tasks I needed "To do",  making "Progress" on these tasks, "Completing" the tasks and reviewing flaws as they arise within my final card. 
 
-<img src="src/Trello_start.png" style="zoom:50%;" />
+<img src="docs/Trello_start.png" style="zoom:50%;" />
 
-<img src="src/trello_in_progress.png" style="zoom:50%;" />
+<img src="docs/trello_in_progress.png" style="zoom:50%;" />
 
 
 

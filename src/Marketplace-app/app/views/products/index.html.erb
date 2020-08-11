@@ -1,0 +1,100 @@
+<%= render "shared/top_nav_online"%>
+<div class="carousel-container d-flex justify-content-center">
+  <div class="my-3 col-10"> 
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="max-height: 400px;">
+          <img class="d-block w-100" style="max-height: 400px;" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/banner1.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item" style="max-height: 400px;">
+          <img class="d-block w-100" style="max-height: 400px;" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/dreamstime_m_103202288-duotone.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item" style="max-height: 400px;">
+          <img class="d-block w-100" style="max-height: 400px;" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/ski.jpg" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+<%# This is heading for 'shop by brand' %>
+<div class="container d-flex justify-content-center my-3">
+  <h1>Shop by Brand</h1>
+</div>
+<%# container for shop by brand items %>
+<div class="container d-flex justify-content-center justify-content-lg-between my-3 bg-light flex-wrap" style="min-height: 250px;">
+  <div class="card text-white col-10 col-md-5 col-lg-3 my-3">
+    
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/alicemccall.jpg" alt="Card image">
+    
+    <div class="card-img-overlay d-flex justify-content-center">
+      <h5 class="card-title"><a href="<%= search_products_path(brand_id: 5) %>">Alice McCall</a></h5>   
+    </div>
+  </div>
+  <div class="card text-white col-10 col-md-5 col-lg-3 my-3">
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/bec%2Bbridge.jpg" alt="Card image">
+    <div class="card-img-overlay d-flex justify-content-center">
+      <h5 class="card-title"><a href="<%= search_products_path(brand_id: 3) %>">Bec + Bridge</a></h5>
+    </div>
+  </div>
+  <div class="card text-white col-10 col-md-5 col-lg-3 my-3">
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/zimmerman.jpg" alt="Card image">
+    <div class="card-img-overlay d-flex justify-content-center">
+      <h5 class="card-title"><a href="<%= search_products_path(brand_id: 1) %>">Zimmerman</a></h5>
+    </div>
+  </div>
+</div>
+
+<%# div for instagram title %>
+<div class="container d-flex justify-content-center my-3">
+  <h1>Follow our Instagram</h1>
+</div>
+<%# div for instagram posts %>
+<div class="container col-10 col-xl-9 d-flex justify-content-center justify-content-sm-between my-3 bg-light flex-wrap">
+  <div class="card text-white col-10 col-sm-5 col-xl-2 my-3">
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/instagram4.jpg" alt="Card image">
+  </div>
+  <div class="card text-white col-10 col-sm-5 my-3 col-xl-3">
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/Instagram1.jpg" alt="Card image">
+  </div>
+  <div class="card text-white col-10 col-sm-5 my-3 col-xl-3">
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/Instagram2.jpg" alt="Card image">
+  </div>
+  <div class="card text-white col-10 col-sm-5 my-3 col-xl-2">
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/instagram3.jpg" alt="Card image">
+  </div>
+</div>
+<%# container for shop by style heading %>
+<div class="container d-flex justify-content-center my-3">
+  <h1>Shop by Style</h1>
+</div>
+<%# container for shop by style %>
+<div class="container d-flex justify-content-center justify-content-sm-between my-3 bg-light flex-wrap">
+  <div class="card text-white col-10 col-sm-4 my-3">
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/midi.jpg" alt="Card image">
+    <div class="card-img-overlay d-flex justify-content-center">
+      <h5 class="card-title"><a href="<%= search_products_path(style_id: 1) %>">Midi</a></h5>   
+    </div>
+  </div>
+  <div class="card text-white col-10 col-sm-4 my-3">
+    <img class="card-img" src="https://marketplace-public-bucket.s3-ap-southeast-2.amazonaws.com/formal.jpg" alt="Card image">
+    <div class="card-img-overlay d-flex justify-content-center">
+      <h5 class="card-title"><a href="<%= search_products_path(style_id: 4)%>">Formal</a></h5>   
+    </div>
+  </div>
+</div>
+
+
+

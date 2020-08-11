@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  price: 1.5
+  brand: one
+  style: one
+  size: one
+  state: one
+  city: one
+  postcode: one
+
+two:
+  title: MyString
+  description: MyText
+  price: 1.5
+  brand: two
+  style: two
+  size: two
+  state: two
+  city: two
+  postcode: two

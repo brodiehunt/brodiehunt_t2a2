@@ -1,0 +1,70 @@
+<%= render "shared/top_nav_marketplace"%>
+<%# main container after top nav bar %>
+<div class="container border">
+<%# One row will exist with 2 columns to hold all content %>
+  <div class="row" style="min-height: 50vh;">
+  <%# This row will hold navigation for messages profile and manage ads %>
+    <div class="col-12 col-sm-3 border mt-3">
+      <ul class="nav flex-sm-column mt-3 justify-content-center justify-content-sm-start">
+        <li class="nav-item">
+          <a class="nav-link active" href="<%= profile_path(current_user.id) %>">Profile Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= listings_dashboard_path %> ">Manage Listings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= conversations_path %>">Messages</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 col-sm-8 ml-sm-3 border mt-3">
+      <%# This container will have the profile information %>
+      <div class="container-fluid border mt-3">
+        <% if @listings != nil %>
+          <div class="container-fluid my-3 bg-light border">
+            <div class="row d-flex my-3">
+              <div class="col-8 d-flex justify-content-start align-items-center">
+                <p class="my-0">Want to add another listing?</p>
+              </div>
+              <div class="col-3 d-flex justify-content-end">
+                <a href="<%= new_listing_path %>" class="btn btn-primary">Create listing</a>
+              </div>
+            </div>
+          </div>
+          <% @listings.each do |listing| %>
+            <div class="card my-3">
+              <div class="card-header">
+                <a href="<%= listing_path(listing.id) %>"><%= listing.title %></a>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <p class="card-text"><%= listing.description %></p>
+                    <div>
+                      <a href="<%= edit_listing_path(listing.id)%>" class="btn btn-primary">Edit</a>
+                      <%= link_to "Delete", listing_path(listing.id), class: "btn btn-primary", method: :delete %>
+                    </div>
+                  </div>
+                  <div class="col-3 d-flex">
+                    <%= image_tag (listing.picture if listing.picture.attached?), :class => "img-fluid" %> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="container-fluid my-3 bg-light border">
+          <div class="row d-flex my-3">
+            <div class="col-8 d-flex justify-content-start align-items-center">
+              <p class="my-0">You currently have no active Listings</p>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+              <a href="<%= new_listing_path %>" class="btn btn-primary">Create listing</a>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

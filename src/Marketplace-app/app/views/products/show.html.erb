@@ -1,0 +1,47 @@
+<%= render "shared/top_nav_online"%>
+<div class="container">
+  <div class="row my-5 justify-content-center border">
+    <div class="col-10 col-md-8 border">
+      <div class="row d-flex justify-content-center">
+        <div class="col-10 col-md-5" style="max-height: 50vh;">
+          <%= image_tag @product.picture if @product.picture.attached? %>    
+        </div>
+      </div>
+    </div>
+    <div class="col-10 col-md-4 border">
+      <div class="row d-flex justify-content-center mt-5">
+        <h4><%= @product.title %></h4>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <h6><%= @brands.find(@product.brand_id).title %></h6>
+      </div>
+      <div class="row d-flex my-3">
+        <div class="col d-flex justify-content-end">
+          <p><strong>Size:</strong><%= @sizes.find(@product.size_id).title %></p>
+        </div>
+        <div class="col d-flex justify-content-start price">
+          <p><strong>Price:</strong><%= @product.price %></p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="container col-10 d-flex justify-content-center bg-light">
+          <p class="text-left"><%= @product.description %></p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center my-3">
+        <% if @cart.include?(@product) %>
+         <div>
+          Item in cart
+         </div>
+         <div>
+          <button class="btn btn-secondary"><%= link_to "Remove Item", remove_from_cart_path(@product.id), method: :delete %></button>
+         </div>
+        <% else %>
+          <button class="btn btn-secondary"><%= link_to "Add to Cart", add_to_cart_path(@product.id), method: :post %></button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
