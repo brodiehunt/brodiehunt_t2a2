@@ -2,17 +2,14 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :update, :destroy]
   before_action :authenticate_user!, only: [ :new, :create, :show, :update, :destroy ]
   
-  # GET /profiles
-  # GET /profiles.json
-  def index
-    @profiles = Profile.all
   
-  end
 
   # GET /profiles/1
   # GET /profiles/1.json
+  # only lets users into page, who the page belongs to 
   def show
-    @user = current_user
+      @user = current_user
+    redirect_to root_path unless current_user.id == params[:id].to_i
   end
 
   # GET /profiles/new

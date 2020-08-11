@@ -2,7 +2,9 @@
 
 link to app: https://radiant-fjord-27151.herokuapp.com/
 
-Link to github: 
+Link to github with read me, docs, ppt, and final src code: https://github.com/brodiehunt/brodiehunt_t2a2
+
+Link to GitHub with just project/commit history: https://github.com/brodiehunt/Dresshire-Marketplace 
 
 #### Problem Solved by this marketplace app
 
@@ -51,7 +53,29 @@ This application is built using the following:
 
 ###### Screenshots
 
-do later
+<img src="docs/website_home.png" style="zoom:50%;" />
+
+<img src="docs/website_search_listings.png" style="zoom:50%;" />
+
+<img src="docs/website_search_products.png" style="zoom:50%;" />
+
+<img src="docs/website_show_listing.png" style="zoom:50%;" />
+
+<img src="docs/website_show_product.png" style="zoom:50%;" />
+
+<img src="docs/website_manage_listings.png" style="zoom:50%;" />
+
+<img src="docs/website_conversation.png" style="zoom:50%;" />
+
+<img src="docs/website_cart.png" style="zoom:50%;" />
+
+<img src="docs/website_hamburger.png" style="zoom:50%;" />
+
+<img src="docs/website_create_listing.png" style="zoom:50%;" />
+
+<img src="docs/website_sign_in.png" style="zoom:50%;" />
+
+<img src="docs/website_profile.png" style="zoom:50%;" />
 
 #### User stories
 
@@ -159,25 +183,21 @@ Heroku: Heroku is a cloud platform as a service. It is a platform in which the m
 
 #### Describe relationships between models
 
-#### More needed on this...
+The relationships I planned to implement are what were created, and are stated below. 
 
 The models used in this application are: Style, Brand, Size, State, City, Postcode, Product, Listing, Profile, User, Conversation, Message.
 
-Style, Brand, Size models has a has_many relationship with both the Product and Listing model.
+Style, Brand, Size models has a has_many relationship with both the Product and Listing model. Style, Brand, and Size models contain all the data for these fields and are utilised within the database for data normalisation and ensure data integrity. On the other end of this relationship, Both products and Listings has a belongs to relationship with Style, Size, and Brand models. 
 
-Style, Brand, Size, State, City, Postcode models has a has_many relationship the the Listing model. 
+State, City and Postcode models have this same relationship with the Listings model as described above. 
 
-Profile Model has a belongs to relationship with the User model. 
+The Profile model has a belongs to relationship with the User model. The User model has a has one relationship with the Profile model. This is to ensure that each user can only have one profile associated with it. This relationship exists to extend the personal details aquired by the app on each user.
 
-Conversation model has a has many relationship with the message model, and Belongs to relationship with User model, in a way that users can be identified as a sender or recipient. 
+The User model has a has many relationship with the Listings model, so each user is able to post many Listings on the web application. Inversly the Listings model has a Belongs to relationship with the User model so that each listing can be tracked and identified to an indivual user. 
 
-Message model has a belongs to relationship with the User model and the Conversation model.
+The Message model has a belongs to relationship with both the user model, and the conversation model. This connects each message to a user, and ensures that each message is part of a conversation, and no messages freely exist without either relation to these models. Conversly, the User model has a has many relationship with the Message model through the Conversations Model. The User model has a has many relationship with the Conversations model so that each user can have multiple conversations with other users. 
 
-Product model has a belongs to relationship with the Brand, Size, Style model. 
-
-Listing Model has a belongs to relationship with Brand, Size, Style, State, City, Postcode and User model. 
-
-User model has a has one relationship with the Profile model, a has many relationship with the Listing model, Message model, and Conversation Model. 
+The Conversations model has a has many relationship with the message model, so the users can interact and send messages back and fourth in the one conversation. It also has a belongs to relationship with the User model.  
 
 #### Database schema design
 

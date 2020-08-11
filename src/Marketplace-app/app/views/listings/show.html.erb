@@ -2,10 +2,8 @@
 <div class="container">
   <div class="row my-5 justify-content-center border">
     <div class="col-10 col-md-8 border">
-      <div class="row d-flex justify-content-center">
-        <div class="col-10 col-md-5" style="max-height: 50vh;">
-          <%= image_tag @listing.picture if @listing.picture.attached? %> 
-        </div>
+      <div class="container" style="max-height: 50vh; width: 80vw;">
+        <%= image_tag @listing.picture if @listing.picture.attached? %> 
       </div>
     </div>
     <div class="col-10 col-md-4 border">
@@ -43,8 +41,9 @@
           <% else %>
             <%= link_to "Message User", conversations_path(sender_id: current_user.id, recipient_id: @listing.user_id), method: 'post', class:"btn btn-secondary" %>
           <% end%> 
+        <% else %>
+          <p>Log in or Register to message user</p>
         <% end %>
-        <p>Log in or Register to message user</p>
       </div>
     </div>
   </div>

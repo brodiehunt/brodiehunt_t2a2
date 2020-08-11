@@ -7,6 +7,7 @@ class Listing < ApplicationRecord
   belongs_to :postcode
   belongs_to :user
   has_one_attached :picture
+  validates_presence_of :title, :description, :price, :user, :picture
 
   scope :filter_by_brand_id, -> (brand_id) { where brand_id: brand_id }
   scope :filter_by_style_id, -> (style_id) { where style_id: style_id }
