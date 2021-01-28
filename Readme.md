@@ -1,6 +1,6 @@
 ## Dress Retail/Marketplace app
 
-link to app: https://radiant-fjord-27151.herokuapp.com/
+link to app: https://dresshire-marketplace.herokuapp.com/
 
 Link to github with read me, docs, ppt, and final src code: https://github.com/brodiehunt/brodiehunt_t2a2
 
